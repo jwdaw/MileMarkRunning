@@ -14,7 +14,7 @@ const teamMembers = [
     role: "Coach",
     specialty: "Middle and Long Distance",
     initials: "JKS",
-    achievements: ["Former Collegiate Runner", "20+ Years Experience"],
+    achievements: ["Former Collegiate Runner"],
     profile_img: "/sipes_photo.jpeg",
   },
 ];
