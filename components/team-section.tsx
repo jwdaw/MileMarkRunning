@@ -10,25 +10,12 @@ const teamMembers = [
     profile_img: "/profilephoto.jpeg",
   },
   {
-    name: "Coach Mike",
-    role: "Assistant Coach",
-    specialty: "Speed & Track",
-    initials: "CM",
-    achievements: ["Former Pro Runner", "Track Specialist"],
-  },
-  {
-    name: "Coach Elena",
-    role: "Strength Coach",
-    specialty: "Injury Prevention",
-    initials: "CE",
-    achievements: ["Physical Therapist", "Strength Expert"],
-  },
-  {
-    name: "Coach James",
-    role: "Trail Coach",
-    specialty: "Ultra & Trail",
-    initials: "CJ",
-    achievements: ["100mi Finisher", "Trail Running Guide"],
+    name: "Jeri Katherine Sipes",
+    role: "Coach",
+    specialty: "Middle and Long Distance",
+    initials: "JKS",
+    achievements: ["Former Collegiate Runner", "20+ Years Experience"],
+    profile_img: "/sipes_photo.jpeg",
   },
 ];
 
@@ -45,18 +32,18 @@ export function TeamSection() {
             Meet the Coaches
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Our diverse team of coaches brings decades of combined experience to
-            help you achieve your running goals. Each coach specializes in
-            different aspects of the sport.
+            Our team of coaches brings decades of combined experience to help
+            you achieve your running goals. Each coach specializes in different
+            aspects of the sport.
           </p>
         </div>
 
         {/* Team grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="group relative bg-card rounded-2xl p-6 border border-border hover:border-primary/50 transition-all duration-300"
+              className="group relative bg-card rounded-2xl p-6 border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
             >
               {/* Avatar */}
               <div className="w-20 h-20 mx-auto rounded-full bg-secondary border-2 border-border group-hover:border-primary transition-colors flex items-center justify-center mb-4">
