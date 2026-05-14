@@ -1,27 +1,31 @@
-import { Award, Target, Users, Zap } from "lucide-react"
+import { Award, Target, Users, Zap } from "lucide-react";
 
 const credentials = [
   {
     icon: Award,
     title: "Certified Coach",
-    description: "USATF & RRCA certified with advanced specializations in distance running",
+    description:
+      "USATF & RRCA certified with advanced specializations in distance running",
   },
   {
     icon: Target,
     title: "Goal-Oriented",
-    description: "Personalized training plans designed around your specific goals and lifestyle",
+    description:
+      "Personalized training plans designed around your specific goals and lifestyle",
   },
   {
     icon: Users,
     title: "Community Focused",
-    description: "Join a supportive network of runners who push each other to excel",
+    description:
+      "Join a supportive network of runners who push each other to excel",
   },
   {
     icon: Zap,
     title: "Data-Driven",
-    description: "Using the latest technology and metrics to optimize your performance",
+    description:
+      "Using the latest technology and metrics to optimize your performance",
   },
-]
+];
 
 export function AboutSection() {
   return (
@@ -30,17 +34,12 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image/Visual side */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl bg-secondary overflow-hidden relative">
-              {/* Placeholder for coach image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center mb-6">
-                    <span className="font-display text-5xl font-bold text-primary">MM</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Your coach photo here</p>
-                </div>
-              </div>
+            <div className="aspect-[4/5] rounded-2xl bg-secondary overflow-hidden relative w-[85%] mx-auto">
+              <img
+                src="/coach_photo.png"
+                alt="Coach"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
             {/* Decorative element */}
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/10 rounded-2xl -z-10" />
@@ -56,19 +55,21 @@ export function AboutSection() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                With over a decade of experience in competitive running and coaching, 
-                I&apos;ve helped hundreds of athletes achieve their personal bests—from 
-                first-time 5K runners to Boston Marathon qualifiers.
+                With over a decade of experience in competitive running and
+                coaching, I&apos;ve helped hundreds of athletes achieve their
+                personal bests, from first-time 5K runners to Boston Marathon
+                qualifiers.
               </p>
               <p>
-                My coaching philosophy centers on sustainable progress, injury prevention, 
-                and building a strong aerobic foundation. I believe that every runner has 
-                untapped potential, and my job is to help you discover it.
+                My coaching philosophy centers on sustainable progress, injury
+                prevention, and building a strong aerobic foundation. I believe
+                that every runner has untapped potential, and my job is to help
+                you discover it.
               </p>
               <p>
-                Whether you&apos;re chasing a PR, training for your first race, or simply 
-                looking to fall in love with running again, I&apos;m here to guide you every 
-                step of the way.
+                Whether you&apos;re chasing a PR, training for your first race,
+                or simply looking to fall in love with running again, I&apos;m
+                here to guide you every step of the way.
               </p>
             </div>
 
@@ -80,8 +81,12 @@ export function AboutSection() {
                     <item.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <h3 className="font-semibold text-foreground mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -90,5 +95,5 @@ export function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

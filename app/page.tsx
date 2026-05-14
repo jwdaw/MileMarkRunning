@@ -9,11 +9,21 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      <HeroSection />
-      <AboutSection />
-      <TeamSection />
-      <PricingSection />
-      <Footer />
+      <div className="animate-drop-in-delay-1">
+        <HeroSection />
+      </div>
+      <div className="animate-drop-in-delay-2">
+        <AboutSection />
+      </div>
+      <div className="animate-drop-in-delay-3">
+        <TeamSection />
+      </div>
+      <div className="animate-drop-in-delay-4">
+        <PricingSection />
+      </div>
+      <div className="animate-drop-in-delay-5">
+        <Footer />
+      </div>
     </main>
   );
 }

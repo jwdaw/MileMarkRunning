@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -16,28 +15,49 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border animate-drop-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center h-auto py-4 gap-4">
-          {/* Logo - Centered */}
+        {/* Mobile: logo left, hamburger right */}
+        <div className="flex items-center justify-between h-16 md:hidden">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-lg">
-                M
-              </span>
-            </div>
+            <img
+              src="/apple-logo.png"
+              alt="Mile Mark"
+              className="w-10 h-10 rounded-full object-cover"
+            />
             <span className="font-display font-bold text-xl text-foreground">
               Mile Mark Running Club
             </span>
           </Link>
 
-          {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center gap-8">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 rounded-md text-foreground hover:bg-primary/10 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Desktop: centered stacked layout */}
+        <div className="hidden md:flex flex-col items-center h-auto py-5 gap-4">
+          <Link href="/" className="flex items-center gap-2.5">
+            <img
+              src="/apple-logo.png"
+              alt="Mile Mark"
+              className="w-11 h-11 rounded-full object-cover"
+            />
+            <span className="font-display font-bold text-[1.35rem] text-foreground">
+              Mile Mark Running Club
+            </span>
+          </Link>
+
+          <nav className="flex items-center gap-9">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary hover:bg-primary/10 px-3 py-1.5 rounded-md transition-colors text-sm font-medium"
+                className="text-muted-foreground hover:text-primary hover:bg-primary/10 px-3.5 py-1.5 rounded-md transition-colors text-[0.935rem] font-medium"
               >
                 {link.label}
               </Link>
@@ -51,36 +71,34 @@ export function Header() {
               <Link href="#pricing">Get Started</Link>
             </Button>
           </nav>
-
-          {/* Mobile Menu */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] bg-card">
-              <nav className="flex flex-col gap-4 mt-8">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-foreground hover:text-primary transition-colors text-lg font-medium py-2"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <Button asChild className="mt-4">
-                  <Link href="#pricing" onClick={() => setIsOpen(false)}>
-                    Get Started
-                  </Link>
-                </Button>
-              </nav>
-            </SheetContent>
-          </Sheet>
         </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 border-b-0"
+        }`}
+      >
+        <nav className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="text-foreground hover:text-primary hover:bg-primary/10 px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="mt-4 pt-4 border-t border-border">
+            <Button asChild className="w-full" size="lg">
+              <Link href="#pricing" onClick={() => setIsOpen(false)}>
+                Get Started
+              </Link>
+            </Button>
+          </div>
+        </nav>
       </div>
     </header>
   );

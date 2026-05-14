@@ -233,14 +233,6 @@ export function PricingSection() {
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <Check className="w-4 h-4 text-primary" />
-              7-day free trial
-            </span>
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-primary" />
-              Cancel with one click
-            </span>
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-primary" />
               100% satisfaction guarantee
             </span>
           </div>
