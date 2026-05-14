@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
 
 const teamMembers = [
   {
@@ -7,6 +7,7 @@ const teamMembers = [
     specialty: "Middle and Long Distance",
     initials: "HW",
     achievements: ["Former Collegiate Runner"],
+    profile_img: "/profilephoto.jpeg",
   },
   {
     name: "Coach Mike",
@@ -29,9 +30,7 @@ const teamMembers = [
     initials: "CJ",
     achievements: ["100mi Finisher", "Trail Running Guide"],
   },
-]
-
-
+];
 
 export function TeamSection() {
   return (
@@ -46,9 +45,9 @@ export function TeamSection() {
             Meet the Coaches
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Our diverse team of coaches brings decades of combined experience to help 
-            you achieve your running goals. Each coach specializes in different aspects 
-            of the sport.
+            Our diverse team of coaches brings decades of combined experience to
+            help you achieve your running goals. Each coach specializes in
+            different aspects of the sport.
           </p>
         </div>
 
@@ -62,7 +61,11 @@ export function TeamSection() {
               {/* Avatar */}
               <div className="w-20 h-20 mx-auto rounded-full bg-secondary border-2 border-border group-hover:border-primary transition-colors flex items-center justify-center mb-4">
                 <span className="font-display text-2xl font-bold text-primary">
-                  {member.initials}
+                  <img
+                    src={member.profile_img}
+                    alt={member.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </span>
               </div>
 
@@ -71,13 +74,21 @@ export function TeamSection() {
                 <h3 className="font-display text-xl font-bold text-foreground mb-1">
                   {member.name}
                 </h3>
-                <p className="text-primary text-sm font-medium mb-1">{member.role}</p>
-                <p className="text-muted-foreground text-sm mb-4">{member.specialty}</p>
+                <p className="text-primary text-sm font-medium mb-1">
+                  {member.role}
+                </p>
+                <p className="text-muted-foreground text-sm mb-4">
+                  {member.specialty}
+                </p>
 
                 {/* Achievements */}
                 <div className="flex flex-wrap justify-center gap-2">
                   {member.achievements.map((achievement) => (
-                    <Badge key={achievement} variant="secondary" className="text-xs">
+                    <Badge
+                      key={achievement}
+                      variant="secondary"
+                      className="text-xs"
+                    >
                       {achievement}
                     </Badge>
                   ))}
@@ -89,9 +100,7 @@ export function TeamSection() {
             </div>
           ))}
         </div>
-
-
       </div>
     </section>
-  )
+  );
 }

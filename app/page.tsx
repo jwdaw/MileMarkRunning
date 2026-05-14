@@ -1,10 +1,9 @@
-import { Header } from "@/components/header"
-import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
-import { TeamSection } from "@/components/team-section"
-import { ScheduleSection } from "@/components/schedule-section"
-import { PricingSection } from "@/components/pricing-section"
-import { Footer } from "@/components/footer"
+import { Header } from "@/components/header";
+import { HeroSection } from "@/components/hero-section";
+import { AboutSection } from "@/components/about-section";
+import { TeamSection } from "@/components/team-section";
+import { PricingSection } from "@/components/pricing-section";
+import { Footer } from "@/components/footer";
 
 export default function HomePage() {
   return (
@@ -13,9 +12,8 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <TeamSection />
-      <ScheduleSection />
       <PricingSection />
       <Footer />
     </main>
-  )
+  );
 }
