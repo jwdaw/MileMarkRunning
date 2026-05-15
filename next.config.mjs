@@ -3,6 +3,9 @@ const nextConfig = {
   output: "export",
   basePath: "/MileMarkRunning",
   assetPrefix: "/MileMarkRunning/",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: "/MileMarkRunning",
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

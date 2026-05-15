@@ -57,7 +57,7 @@ export function TeamSection() {
               <div className="w-20 h-20 mx-auto rounded-full bg-secondary border-2 border-border group-hover:border-primary transition-colors flex items-center justify-center mb-4">
                 <span className="font-display text-2xl font-bold text-primary">
                   <img
-                    src={member.profile_img}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${member.profile_img}`}
                     alt={member.name}
                     className="w-full h-full object-cover rounded-full"
                   />

@@ -21,7 +21,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:hidden">
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/apple-logo.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/apple-logo.png`}
               alt="Mile Mark"
               className="w-10 h-10 rounded-full object-cover"
             />
@@ -43,7 +43,7 @@ export function Header() {
         <div className="hidden md:flex flex-col items-center h-auto py-6 gap-5">
           <Link href="/" className="flex items-center gap-3">
             <img
-              src="/apple-logo.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/apple-logo.png`}
               alt="Mile Mark"
               className="w-12 h-12 rounded-full object-cover"
             />

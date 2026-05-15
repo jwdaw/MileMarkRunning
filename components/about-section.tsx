@@ -7,7 +7,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="aspect-4/5 rounded-2xl bg-secondary overflow-hidden relative w-[85%] mx-auto">
               <img
-                src="/coach_photo.jpeg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/coach_photo.jpeg`}
                 alt="Coach"
                 className="absolute inset-0 w-full h-full object-cover"
               />

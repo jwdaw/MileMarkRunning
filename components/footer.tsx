@@ -27,7 +27,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <img
-                src="/apple-logo.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/apple-logo.png`}
                 alt="Mile Mark"
                 className="w-10 h-10 rounded-full object-cover"
               />
