@@ -40,27 +40,33 @@ export function Header() {
         </div>
 
         {/* Desktop: centered stacked layout */}
-        <div className="hidden md:flex flex-col items-center h-auto py-5 gap-4">
-          <Link href="/" className="flex items-center gap-2.5">
+        <div className="hidden md:flex flex-col items-center h-auto py-6 gap-5">
+          <Link href="/" className="flex items-center gap-3">
             <img
               src="/apple-logo.png"
               alt="Mile Mark"
-              className="w-11 h-11 rounded-full object-cover"
+              className="w-12 h-12 rounded-full object-cover"
             />
-            <span className="font-display font-bold text-[1.35rem] text-foreground">
+            <span className="font-display font-bold text-2xl text-foreground">
               Mile Mark Running Club
             </span>
           </Link>
 
-          <nav className="flex items-center gap-9">
+          <nav className="flex items-center gap-10">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary hover:bg-primary/10 px-3.5 py-1.5 rounded-md transition-colors text-[0.935rem] font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .querySelector(link.href)
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="text-muted-foreground hover:text-primary hover:bg-primary/10 px-4 py-2 rounded-md transition-colors text-[1.05rem] font-medium cursor-pointer"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <Button
               asChild
@@ -68,7 +74,17 @@ export function Header() {
               size="sm"
               className="bg-transparent hover:bg-primary/10 hover:text-primary transition-colors"
             >
-              <Link href="#pricing">Get Started</Link>
+              <a
+                href="#pricing"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .querySelector("#pricing")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Get Started
+              </a>
             </Button>
           </nav>
         </div>
