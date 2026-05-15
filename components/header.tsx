@@ -68,24 +68,18 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="bg-transparent hover:bg-primary/10 hover:text-primary transition-colors"
+            <a
+              href="#pricing"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector("#pricing")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-muted-foreground hover:text-primary hover:bg-primary/10 px-4 py-2 rounded-md transition-colors text-[1.05rem] font-medium cursor-pointer"
             >
-              <a
-                href="#pricing"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .querySelector("#pricing")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Get Started
-              </a>
-            </Button>
+              Get Started
+            </a>
           </nav>
         </div>
       </div>

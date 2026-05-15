@@ -19,7 +19,7 @@ export function AboutSection() {
           {/* Content side */}
           <div className="flex flex-col justify-center">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              About Coach Willcox
+              Message from the founder
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-8 text-balance">
               Dedicated to Your Running Success
