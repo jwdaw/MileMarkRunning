@@ -17,6 +17,14 @@ const teamMembers = [
     achievements: ["Former Collegiate Runner"],
     profile_img: "/sipes_photo.jpeg",
   },
+  {
+    name: "Ella Zeigler",
+    role: "Coach",
+    specialty: "XC and Long Distance",
+    initials: "EZ",
+    achievements: ["Former Collegiate Runner"],
+    profile_img: "/ella_photo.JPG",
+  },
 ];
 
 export function TeamSection() {
