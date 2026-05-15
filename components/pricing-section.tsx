@@ -33,10 +33,21 @@ const plan = {
 export function PricingSection() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [rateLimited, setRateLimited] = useState(false);
+
+  const RATE_LIMIT_MS = 10 * 60 * 1000; // 10 minutes
 
   // Handle form submission via fetch to Web3Forms API
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Client-side rate limit: 1 submission per 10 minutes
+    const lastSubmit = localStorage.getItem("form_last_submit");
+    if (lastSubmit && Date.now() - parseInt(lastSubmit) < RATE_LIMIT_MS) {
+      setRateLimited(true);
+      return;
+    }
+
     setLoading(true);
 
     const form = e.currentTarget;
@@ -65,6 +76,7 @@ export function PricingSection() {
 
       if (result.success) {
         console.log("[Web3Forms] Submission successful!");
+        localStorage.setItem("form_last_submit", Date.now().toString());
         setSubmitted(true);
       } else {
         console.error("[Web3Forms] Submission failed:", result.message);
@@ -214,10 +226,20 @@ export function PricingSection() {
                       type="submit"
                       className="w-full"
                       size="lg"
-                      disabled={loading}
+                      disabled={loading || rateLimited}
                     >
-                      {loading ? "Submitting..." : "Get Started"}
+                      {loading
+                        ? "Submitting..."
+                        : rateLimited
+                          ? "Please wait 10 minutes"
+                          : "Get Started"}
                     </Button>
+                    {rateLimited && (
+                      <p className="text-sm text-destructive text-center mt-2">
+                        You&apos;ve already submitted recently. Please try again
+                        in a few minutes.
+                      </p>
+                    )}
                   </form>
                 </CardContent>
               </>
