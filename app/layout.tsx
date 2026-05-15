@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     "Transform your running with personalized coaching from Mile Mark Running Club. Join our community of dedicated runners and reach your goals.",
   generator: "v0.app",
   icons: {
-    icon: "/MileMarkRunning/apple-logo.png",
-    apple: "/MileMarkRunning/apple-logo.png",
+    icon: "/apple-logo.png",
+    apple: "/apple-logo.png",
   },
 };
 
