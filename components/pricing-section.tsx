@@ -166,7 +166,8 @@ export function PricingSection() {
                     Ready to Start?
                   </CardTitle>
                   <CardDescription>
-                    Tell us about yourself and we&apos;ll set up a meeting!
+                    Tell us about yourself and we&apos;ll set up a free
+                    consultation meeting!
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
