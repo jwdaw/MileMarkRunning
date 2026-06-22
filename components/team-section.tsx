@@ -41,6 +41,19 @@ const teamMembers = [
       "Her favorite event to run is the Mile, and her favorite event to coach is the 3200m!",
     ],
   },
+  {
+    name: "Jeremy Lewis",
+    role: "Coach",
+    specialty: "Middle and Long Distance",
+    initials: "JL",
+    achievements: ["Former Collegiete Runner", "USATF Level 1 Coach"],
+    profile_img: "/jeremy_photo.jpeg",
+    bio: [
+      "Coach Lewis competed at High Point University (mid-distance), is a USATF Level 1 Coach, and is pursuing a doctorate at the University of South Carolina studying sport psychology.",
+      "With over 10 years of experience, he currently coaches boys cross country and leads the distance track and field program at Lexington High School.",
+      "While the 800m is his favorite event, he works with 400m-5000m, cross country, and road racing athletes. Additionally, he offers mental performance training that helps athletes build confidence to reach peak performance.",
+    ],
+  },
 ];
 
 export function TeamSection() {
@@ -86,7 +99,7 @@ export function TeamSection() {
                 onClick={() =>
                   member.bio.length > 0 && setSelectedMember(member)
                 }
-                className={`group relative bg-card rounded-2xl p-6 border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] ${member.bio.length > 0 ? "cursor-pointer" : ""}`}
+                className={`group relative flex flex-col justify-center bg-card rounded-2xl p-6 border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] ${member.bio.length > 0 ? "cursor-pointer" : ""}`}
               >
                 {/* Avatar */}
                 <div className="w-20 h-20 mx-auto rounded-full bg-secondary border-2 border-border group-hover:border-primary transition-colors flex items-center justify-center mb-4 overflow-hidden">
