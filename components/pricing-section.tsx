@@ -19,14 +19,13 @@ const plan = {
   name: "All-In",
   description:
     "Comprehensive coaching for dedicated athletes seeking peak performance",
-  price: 149.99,
+  price: 150.0,
   features: [
     "Personalized Training Plan",
-    "Weekly Plan Adjustments",
-    "Weekly Correspondence",
+    "Unlimited Plan Adjustments",
+    "Unlimited Correspondence",
     "Race Strategy Planning",
     "Strength & Mobility Programming",
-    "Priority Coach Access",
   ],
 };
 
@@ -116,7 +115,7 @@ export function PricingSection() {
         </div>
 
         {/* Two column: pricing left, form right */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
           {/* Pricing card */}
           <Card className="relative bg-card border-primary shadow-lg shadow-primary/10 h-fit">
             <CardHeader className="text-center pb-4">
