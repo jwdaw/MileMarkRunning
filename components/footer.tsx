@@ -5,7 +5,7 @@ const footerLinks = {
   coaching: [
     { label: "About", href: "#about" },
     { label: "Our Team", href: "#team" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "Join", href: "#pricing" },
   ],
 };
 

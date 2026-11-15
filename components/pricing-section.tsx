@@ -8,26 +8,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Check } from "lucide-react";
-
-const plan = {
-  name: "All-In",
-  description:
-    "Comprehensive coaching for dedicated athletes seeking peak performance",
-  price: 150.0,
-  features: [
-    "Personalized Training Plan",
-    "Unlimited Plan Adjustments",
-    "Unlimited Correspondence",
-    "Race Strategy Planning",
-    "Strength & Mobility Programming",
-  ],
-};
 
 export function PricingSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -96,57 +81,19 @@ export function PricingSection() {
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-primary font-medium text-sm uppercase tracking-wider">
-            Get Started
+            Join the Club
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6 text-balance">
-            Invest in Your Running
+            Interested in Running With Us?
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            One plan. Everything you need. Fill out the form and we&apos;ll be
-            in touch to get you started.
+            Let us know you&apos;re interested. Fill out the form and we&apos;ll
+            reach out to set up a free consultation.
           </p>
         </div>
 
-        {/* Cancel anytime badge */}
-        <div className="flex justify-center mb-12">
-          <Badge variant="secondary" className="text-sm px-4 py-2">
-            Cancel anytime - No questions asked
-          </Badge>
-        </div>
-
-        {/* Two column: pricing left, form right */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
-          {/* Pricing card */}
-          <Card className="relative bg-card border-primary shadow-lg shadow-primary/10 h-fit">
-            <CardHeader className="text-center pb-4">
-              <CardTitle className="font-display text-2xl">
-                {plan.name}
-              </CardTitle>
-              <CardDescription>{plan.description}</CardDescription>
-            </CardHeader>
-
-            <CardContent className="text-center">
-              <div className="mb-6">
-                <span className="font-display text-5xl font-bold text-foreground">
-                  ${plan.price}
-                </span>
-                <span className="text-muted-foreground">/month</span>
-              </div>
-
-              <ul className="space-y-3 text-left">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground text-sm">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-
-          {/* Web3Forms contact form */}
+        <div className="max-w-xl mx-auto">
+          {/* Web3Forms interest form */}
           <Card className="bg-card border-border flex flex-col">
             {submitted ? (
               <div className="text-center flex flex-col items-center justify-center grow py-12">
@@ -162,7 +109,7 @@ export function PricingSection() {
               <>
                 <CardHeader>
                   <CardTitle className="font-display text-xl">
-                    Ready to Start?
+                    Express Your Interest
                   </CardTitle>
                   <CardDescription>
                     Tell us about yourself and we&apos;ll set up a free
@@ -232,7 +179,7 @@ export function PricingSection() {
                         ? "Submitting..."
                         : rateLimited
                           ? "Please wait 10 minutes"
-                          : "Get Started"}
+                          : "I'm Interested"}
                     </Button>
                     {rateLimited && (
                       <p className="text-sm text-destructive text-center mt-2">
@@ -245,19 +192,6 @@ export function PricingSection() {
               </>
             )}
           </Card>
-        </div>
-
-        {/* Trust signals */}
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-4 text-lg font-medium">
-            No contracts. No hidden fees. Cancel anytime.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-primary" />
-              100% satisfaction guarantee
-            </span>
-          </div>
         </div>
       </div>
     </section>
